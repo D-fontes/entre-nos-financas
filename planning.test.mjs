@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {seed,totals} from './finance.mjs';
+import {preparePlanning,repeatPreview,repeatCommit,contribute} from './planning.mjs';
+test('repetir preserva pago, ajusta fevereiro e impede duplicação',()=>{const s=seed();s.items[1].due='2026-06-30';const original=structuredClone(s.items[1]);const rows=repeatPreview(s,['rent'],'2027-02');assert.equal(rows[0].due,'2027-02-28');assert.equal(rows[0].paid,false);assert.equal(rows[0].date,undefined);assert.equal(repeatCommit(s,['rent'],'2027-02'),1);assert.equal(repeatCommit(s,['rent'],'2027-02'),0);assert.deepEqual(s.items[1],original);assert.equal(repeatCommit(s,['rent@2027-02'],'2027-03'),1);assert.equal(repeatCommit(s,['rent'],'2027-03'),0);assert.throws(()=>repeatPreview(s,['rent'],'2026-05'));});
+test('metas independentes reservam sem criar despesa e respeitam disponível',()=>{const s=preparePlanning(seed());const t=totals(s),n=s.items.length;contribute(s,'college',10000,t.available);assert.equal(s.goals.find(g=>g.id==='college').saved,10000);assert.equal(totals(s).balance,t.balance);assert.equal(totals(s).available,t.available-10000);assert.equal(s.items.length,n);assert.throws(()=>contribute(s,'college',t.available,totals(s).available));});

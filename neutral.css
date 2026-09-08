@@ -1,0 +1,27 @@
+/* Preto e cinza como base; cor concentrada nos dados e ícones. */
+:root{--bg:#f4f4f5;--panel:#fff;--text:#202024;--muted:#696971;--line:#e3e3e7;--green:#3a3a43;--soft:#eeeef1;--shadow:0 4px 20px #00000004}
+body.dark{--bg:#101012;--panel:#1b1b1f;--text:#f4f4f6;--muted:#a4a4af;--line:#303036;--green:#eeeef2;--soft:#28282e;--orange:#ffa780;--shadow:none}
+.balance,body.dark .balance{background:linear-gradient(120deg,#29292f,#1c1c21);border:1px solid #404047;box-shadow:none}
+.balance:after{border-color:#ffffff13;box-shadow:0 0 0 28px #ffffff02,0 0 0 57px #ffffff02}
+.balance small{color:#c2c2cc}.brandmark{background:#27272d;color:#c4afff}
+.avatar{background:#e5def5;color:#564277}.primary{box-shadow:none}.primary:hover{background:#50505b;color:#fff}
+body.dark .primary{background:#ededf1;color:#19191d}body.dark .primary:hover{background:#d4d4dd;color:#111}
+.positive{color:#278360}body.dark .positive{color:#7cdbab}
+.goal-art,body.dark .goal-art{background:var(--soft);color:#9470da}
+body.dark .goal-art{color:#be9cff}.progress span{background:#a589ef}
+.chart .bar i{background:#72d4ad}.chart .bar:nth-child(2) i{background:#a68bf2}
+.category:nth-of-type(3n+1) .progress span{background:#79b5f7}.category:nth-of-type(3n+2) .progress span{background:#eeab70}.category:nth-of-type(3n) .progress span{background:#b296f1}
+nav button.active{color:var(--text)}nav button:nth-child(1) .ui-icon{color:#8b73ce}nav button:nth-child(2) .ui-icon{color:#399d83}nav button:nth-child(3) .ui-icon{color:#538fd0}nav button:nth-child(4) .ui-icon{color:#c28a45}nav button:nth-child(5) .ui-icon{color:#bd6e95}
+body.dark nav button:nth-child(1) .ui-icon{color:#bea0ff}body.dark nav button:nth-child(2) .ui-icon{color:#79d9b5}body.dark nav button:nth-child(3) .ui-icon{color:#84baff}body.dark nav button:nth-child(4) .ui-icon{color:#f2c17d}body.dark nav button:nth-child(5) .ui-icon{color:#ee9ec6}
+.tile[data-tone=blue],body.dark .tile[data-tone=blue]{background:#5296e51c;color:#75a9ed;border-color:#5296e51c}
+.tile[data-tone=orange],body.dark .tile[data-tone=orange]{background:#d18d491c;color:#dca263;border-color:#d18d491c}
+.tile[data-tone=pink],body.dark .tile[data-tone=pink]{background:#d976a51c;color:#e091b7;border-color:#d976a51c}
+.tile[data-tone=purple],body.dark .tile[data-tone=purple]{background:#a280e21c;color:#ad8cea;border-color:#a280e21c}
+.tile[data-tone=green],body.dark .tile[data-tone=green]{background:#56bd991c;color:#66c5a2;border-color:#56bd991c}
+body.dark .amount .late{background:#382a23;color:#ffc199}.day.today{background:#b69be9;color:#20182d}
+body.dark .badge{background:#2b2b32;color:#c8c8d2}.tools .ui-icon{color:var(--muted)}
+body.dark #toast{background:#34343d;color:#fff}
+/* Cores vivas, preservando as superfícies neutras. */
+body.dark nav button:nth-child(1) .ui-icon{color:#b77aff}body.dark nav button:nth-child(2) .ui-icon{color:#20efb0}body.dark nav button:nth-child(3) .ui-icon{color:#439fff}body.dark nav button:nth-child(4) .ui-icon{color:#ffb32c}body.dark nav button:nth-child(5) .ui-icon{color:#ff5db6}
+body.dark .tile[data-tone=blue]{background:#208bff24;color:#459fff}body.dark .tile[data-tone=orange]{background:#ff951c24;color:#ffaf32}body.dark .tile[data-tone=pink]{background:#ff409724;color:#ff67b2}body.dark .tile[data-tone=purple]{background:#a04aff24;color:#b77aff}body.dark .tile[data-tone=green]{background:#00dc9a24;color:#20efb0}
+.chart .bar i{background:#19e6aa}.chart .bar:nth-child(2) i{background:#a765ff}.progress span{background:#a765ff}.category:nth-of-type(3n+1) .progress span{background:#349aff}.category:nth-of-type(3n+2) .progress span{background:#ffad26}.category:nth-of-type(3n) .progress span{background:#ab65ff}.personal-shortcut{white-space:nowrap;margin-top:12px}#history-modal .amount{white-space:normal;max-width:115px}#history-modal .note{font-size:13px}

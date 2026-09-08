@@ -1,0 +1,7 @@
+*privado*
+*.xls
+*.xlsx
+.env*
+node_modules/
+dados-privados/
+.finance-analysis/

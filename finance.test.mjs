@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {seed,totals,settle,undo,report} from './finance.mjs';
+test('pagamento único, disponível estável e desfazer restaura saldo',()=>{const s=seed(),before=totals(s),count=s.items.length;assert.throws(()=>settle(s,'light',{}));assert.equal(settle(s,'light',{date:'2026-06-15',account:'Conta principal',method:'Pix'}),true);assert.equal(totals(s).balance,before.balance-18690);assert.equal(totals(s).available,before.available);assert.equal(settle(s,'light',{date:'2026-06-15',account:'Conta principal',method:'Pix'}),false);assert.equal(s.items.length,count);undo(s,'light');assert.deepEqual(totals(s),before);assert.equal(undo(s,'light'),false)});
+test('caixa exclui previsões; competência as inclui; reserva não muda saldo',()=>{const s=seed();assert.equal(report(s,'cash').length,3);assert.equal(report(s,'competence').length,8);const before=totals(s);s.reserve+=10000;assert.equal(totals(s).balance,before.balance);assert.equal(totals(s).available,before.available-10000)});
