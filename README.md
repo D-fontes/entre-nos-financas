@@ -23,3 +23,9 @@ Testes: `node --test finance.test.mjs planning.test.mjs history.test.mjs`.
 ## Limites atuais
 
 Cartões com conciliação de fatura, parcelas completas, integração Open Finance e captura via Atalhos ainda não estão implementados. Não há leitura automática de Apple Pay. A tela principal mantém dados de demonstração; o histórico pessoal está em Minha planilha.
+
+## Entrada de compra via link (experimental)
+
+O app aceita `#compra?descricao=Loja&valor=12.50&ref=identificador-unico` no final do endereço. Isso abre uma conferência com categoria; só grava após Salvar. A referência, quando fornecida, impede gravar novamente a mesma entrada. Use codificação de URL para a descrição e ponto decimal no valor. O fragmento é removido do endereço após a leitura e não integra o pedido HTTP enviado ao Pages.
+
+É uma entrada preparada para um futuro Atalho pessoal, não uma conexão automática com Apple Pay. A automação Transação deve ser configurada e testada no próprio iPhone. O navegador aberto pelo Atalho pode ter armazenamento separado do ícone instalado; valide antes de usá-lo no dia a dia. Documentação Apple: https://support.apple.com/en-ie/guide/shortcuts/apd65c67538a/ios .
